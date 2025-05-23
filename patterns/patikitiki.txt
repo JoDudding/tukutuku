@@ -1,0 +1,13 @@
+key
+w turquoise
+r red
+b black
+
+pattern
+1 wwwrrb
+2 wwrrbb
+3 wrrbbw
+4 rrbbww
+5 wrrbbw
+6 wwrrbb
+7 wwwrrb

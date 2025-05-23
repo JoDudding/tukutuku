@@ -1,0 +1,13 @@
+key
+t turquoise
+w white
+b black
+
+pattern
+1 bbbttbwtwtbttbbbb
+2 bbbttbtwtwbttbbbb
+3 bbbttbwtwtbttbbbb
+4 tttttbtwtwbtttttb
+5 tbbbbbbbbbbbbbbtb
+6 tbwtwtbbbbwtwtbtb
+7 tbtwtwbbbbtwtwbtb

@@ -1,0 +1,54 @@
+key
+t turquoise
+n navy
+1 navy half /
+2 navy half other
+w white
+3 white half /
+4 white half other
+
+pattern
+0  000000000111111111222
+0  123456789013546789012 
+1  t1111111111111111111t
+2  tnnnnnnnnnnnnnnnnnnnt
+3  t3333333333333333333t
+4  tnnnnnnnnnnnnnnnnnnnt
+5  33333333333-----ttttt
+6  33333333333--w--ttttt
+7  333---------www-ttttt
+8  333-11111--wwwwwttttt
+9  333-11111--ttttt-----
+10 333-1---w--ttttt--w--
+11 333-1--www-ttttt-www-
+12 333-1-wwwwwtttttwwwww
+13 333---ttttt1111111111
+14 33-w--ttttt--w------1
+15 3-www-ttttt-www--43-1
+16 -wwwwwtttttwwwww-ww-1
+17 -ttttt-----tttttwwww1
+18 -ttttt--w--ttttt-ww-1
+19 -ttttt-www-ttttt-43-1
+20 -tttttwwwwwttttt----1
+21 222222222222222222222
+22 wwwwwwwwwwwwwwwwwwwww
+23 111111111111111111111
+24 -tttttwwwwwttttt----1
+25 -ttttt-www-ttttt-43-1
+26 -ttttt--w--ttttt-ww-1
+27 -ttttt-----tttttwwww1
+28 -wwwwwtttttwwwww-ww-1
+29 3-www-ttttt-www--43-1
+30 33-w--ttttt--w------1
+31 333---ttttt1111111111
+32 333-1-wwwwwtttttwwwww
+33 333-1--www-ttttt-www-
+34 333-1---w--ttttt--w--
+35 333-11111--ttttt-----
+36 333-11111--wwwwwttttt
+37 333---------www-ttttt
+38 33333333333--w--ttttt
+39 33333333333-----ttttt
+40 tnnnnnnnnnnnnnnnnnnnt
+41 t3333333333333333333t
+42 tnnnnnnnnnnnnnnnnnnnt

@@ -1,0 +1,27 @@
+key
+w turquoise
+r red
+b black
+
+pattern
+ 1 wbrwww
+ 2 bbrwbb
+ 3 rrrwbr
+ 4 rwwwbr
+ 5 rwbbbr
+ 6 rwbrrr
+ 7 wwbrww
+ 8 bbbrwb
+ 9 brrrwb
+10 brwwwb
+11 brwbbb
+12 rrwbrr
+13 wwwbrw
+14 wbbbrw
+15 wbrrrw
+16 wbrwww
+17 bbrwbb
+18 rrrwbr
+19 wwwwbr
+20 wbbbbr
+21 wbrrrr
