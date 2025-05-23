@@ -43,22 +43,22 @@ base <- crossing(col = 1:15, row = 1:20) |>
     type = "X"
   ) |>
   filter(
-    !(col %in% 5:6 & row %in% 13:16)
+    !(col %in% 4:5 & row %in% 14:17)
   ) |>
   add_row(
-    col = 5, row = 13, width = 1, height = 2,
+    col = 4, row = 14, width = 1, height = 2,
     colour = "grey20", type = "<"
   ) |>
   add_row(
-    col = 6, row = 13, width = 1, height = 2,
+    col = 5, row = 14, width = 1, height = 2,
     colour = "grey20", type = "/"
   ) |>
   add_row(
-    col = 5, row = 15, width = 1, height = 2,
+    col = 4, row = 16, width = 1, height = 2,
     colour = "grey20", type = "/"
   ) |>
   add_row(
-    col = 6, row = 15, width = 1, height = 2,
+    col = 5, row = 16, width = 1, height = 2,
     colour = "grey20", type = "<"
   )
 
@@ -90,7 +90,7 @@ base_backslash <- base |>
 
 ggplot() +
   geom_segment(
-    data = base_slash,
+    data = base_backslash,
     aes(
       x = x, xend = xend, y = y, yend = yend,
       colour = border_col
@@ -99,7 +99,7 @@ ggplot() +
     lineend = "round"
   ) +
   geom_segment(
-    data = base_slash,
+    data = base_backslash,
     aes(
       x = x, xend = xend, y = y, yend = yend,
       colour = colour
@@ -108,7 +108,7 @@ ggplot() +
     lineend = "round"
   ) +
   geom_segment(
-    data = base_backslash,
+    data = base_slash,
     aes(
       x = x, xend = xend, y = y, yend = yend,
       colour = border_col
@@ -117,7 +117,7 @@ ggplot() +
     lineend = "round"
   ) +
   geom_segment(
-    data = base_backslash,
+    data = base_slash,
     aes(
       x = x, xend = xend, y = y, yend = yend,
       colour = colour
