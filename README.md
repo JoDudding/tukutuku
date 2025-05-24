@@ -10,3 +10,10 @@ Creative](https://www.whatucreative.com/) that came out really well, and
 was inspired to play with creating digital tukutuku.
 
 ![](outputs/cross-stitch.png)
+
+Using a different random seed to assign the colours and following the
+same steps here are three random tukutuku.
+
+![](outputs/tukutuku_seed-656_steps-b-m10x-m10y_width-18_height-12.png)
+![](outputs/tukutuku_seed-657_steps-b-m10x-m10y_width-18_height-12.png)
+![](outputs/tukutuku_seed-658_steps-b-m10x-m10y_width-18_height-12.png)
