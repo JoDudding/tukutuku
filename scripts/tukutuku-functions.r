@@ -238,6 +238,7 @@ create_tukutuku <- function(
     coord_fixed_ratio = 1.1,
     expand_mult = 0.05,
     save = TRUE) {
+  
   #---- split out the / direction stitches and set start and end points ----
 
   base_slash <- base |>
@@ -313,9 +314,9 @@ create_tukutuku <- function(
   #---- save ----
 
   if (save) {
-    width <- max(base$col)
+    width <- max(base$y)
 
-    height <- max(base$row)
+    height <- max(base$x)
 
     ratio <- (height * (coord_fixed_ratio + expand_mult + expand_mult)) /
       ((width * (1 + expand_mult + expand_mult)))

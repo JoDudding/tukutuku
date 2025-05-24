@@ -16,20 +16,14 @@ source("scripts/tukutuku-functions.r")
 #--- random default ---
 
 init_pattern() |> 
-  transmute(
+  mutate(
     colour = case_match(
       short,
       'r' ~ '#a01e1e',
       'b' ~ 'grey5',
       'w' ~ 'grey95'
     ),
-    row = y + 0.5,
-    col = x + 0.5,
-    height = 1,
-    width = 1,
-    type = "X",
-    seed,
-    steps
+    type = "X"
   ) |>
   create_tukutuku()
 
@@ -38,20 +32,14 @@ init_pattern() |>
 init_pattern(7, 7) |> 
   stack_mirror() |>
   stack_mirror(TRUE, dir = y) |>
-  transmute(
+  mutate(
     colour = case_match(
       short,
       'r' ~ '#a01e1e',
       'b' ~ 'grey5',
       'w' ~ 'grey95'
     ),
-    row = y + 0.5,
-    col = x + 0.5,
-    height = 1,
-    width = 1,
-    type = "X",
-    seed,
-    steps
+    type = "X"
   ) |>
   create_tukutuku()
 
@@ -60,60 +48,42 @@ init_pattern(7, 7) |>
 p1 <- init_pattern(6, 9, seed = 656) |> 
   stack_mirror() |>
   stack_mirror(TRUE, dir = y) |>
-  transmute(
+  mutate(
     colour = case_match(
       short,
       'r' ~ '#a01e1e',
       'b' ~ 'grey5',
       'w' ~ 'grey95'
     ),
-    row = y + 0.5,
-    col = x + 0.5,
-    height = 1,
-    width = 1,
-    type = "X",
-    seed,
-    steps
+    type = "X"
   ) |>
   create_tukutuku()
 
 p2 <- init_pattern(6, 9, seed = 657) |> 
   stack_mirror() |>
   stack_mirror(TRUE, dir = y) |>
-  transmute(
+  mutate(
     colour = case_match(
       short,
       'r' ~ '#a01e1e',
       'b' ~ 'grey5',
       'w' ~ 'grey95'
     ),
-    row = y + 0.5,
-    col = x + 0.5,
-    height = 1,
-    width = 1,
-    type = "X",
-    seed,
-    steps
+    type = "X"
   ) |>
   create_tukutuku()
 
 p3 <- init_pattern(6, 9, seed = 658) |> 
   stack_mirror() |>
   stack_mirror(TRUE, dir = y) |>
-  transmute(
+  mutate(
     colour = case_match(
       short,
       'r' ~ '#a01e1e',
       'b' ~ 'grey5',
       'w' ~ 'grey95'
     ),
-    row = y + 0.5,
-    col = x + 0.5,
-    height = 1,
-    width = 1,
-    type = "X",
-    seed,
-    steps
+    type = "X"
   ) |>
   create_tukutuku()
 
@@ -127,15 +97,9 @@ taku_ara_list$pattern |>
   stack_mirror(even = FALSE, dir = x) |>
   #stack_mirror(even = TRUE, dir = y) |> # not working
   left_join(taku_ara_list$key, by = "short") |>
-  transmute(
+  mutate(
     colour = col,
-    row = y,
-    col = x,
-    height = 1,
-    width = 1,
-    type = "X",
-    seed,
-    steps
+    type = "X"
   ) |>
   create_tukutuku()
 
@@ -148,15 +112,9 @@ patikitiki_list$pattern |>
   stack_mirror(even = TRUE, dir = y) |>
   stack_col(dir = x) |> # y version not working
   left_join(patikitiki_list$key, by = "short") |>
-  transmute(
+  mutate(
     colour = col,
-    row = y,
-    col = x,
-    height = 1,
-    width = 1,
-    type = "X",
-    seed,
-    steps
+    type = "X"
   ) |>
   create_tukutuku(padding = 0.2, line_width = 2.5)
 
@@ -167,17 +125,11 @@ poutama_list <- read_pattern('poutama')
 poutama_list$pattern |>
   stack_mirror(even = TRUE, dir = x) |>
   #stack_mirror(even = TRUE, dir = y) |>
-  stack_col(dir = y) |> # y version not working
+  #stack_col(dir = y) |> # y version not working
   left_join(poutama_list$key, by = "short") |>
-  transmute(
+  mutate(
     colour = col,
-    row = y,
-    col = x,
-    height = 1,
-    width = 1,
-    type = "X",
-    seed,
-    steps
+    type = "X"
   ) |>
   create_tukutuku(line_width = 1)
 
