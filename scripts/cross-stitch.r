@@ -43,23 +43,22 @@ base <- crossing(col = 1:15, row = 1:20) |>
     type = "X"
   ) |>
   filter(
-    !(col %in% 4:5 & row %in% 14:17)
+    !(col %in% 4:6 & row %in% 14:17)
   ) |>
   add_row(
-    col = 4, row = 14, width = 1, height = 2,
-    colour = "grey20", type = "<"
+    col = 4, row = 14, width = 1, height = 2, colour = "grey20", type = "/"
   ) |>
   add_row(
-    col = 5, row = 14, width = 1, height = 2,
-    colour = "grey20", type = "/"
+    col = 5, row = 14, width = 1, height = 2, colour = "grey20", type = "<"
   ) |>
   add_row(
-    col = 4, row = 16, width = 1, height = 2,
-    colour = "grey20", type = "/"
+    col = 4, row = 16, width = 1, height = 2, colour = "grey20", type = "<"
   ) |>
   add_row(
-    col = 5, row = 16, width = 1, height = 2,
-    colour = "grey20", type = "<"
+    col = 5, row = 16, width = 1, height = 2, colour = "grey20", type = "/"
+  ) |> 
+  add_row(
+    col = 6, row = 14:16, width = 1, height = 2, colour = "grey20", type = "X"
   )
 
 #---- split out the / direction stitches and set start and end points ----
@@ -144,7 +143,8 @@ ratio <- (height * (coord_fixed_ratio + expand_mult + expand_mult)) /
   ((width * (1 + expand_mult + expand_mult)))
 
 ggsave(
-  "outputs/cross-stitch.png",
+  "outputs/seed-9919_steps-b-m10x-m10y.png",
+  #"outputs/cross-stitch.png",
   height = height_inches,
   width = height_inches / ratio,
   dpi = 300
