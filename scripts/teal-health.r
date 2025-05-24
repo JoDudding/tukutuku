@@ -1,28 +1,40 @@
+#-------------------------------------------------------------------------------
+#' teal-health.r
+#-------------------------------------------------------------------------------
+#' jo dudding
+#' May 2025
+#' use health pattern to create tukutuku
+#-------------------------------------------------------------------------------
 
+source("scripts/tukutuku-functions.r")
 
-source('scripts/tukutuku-functions.r')
+#--- read pattern ---
 
-health_list <- read_pattern('teal-health')
-health_pattern <- health_list$pattern
-#health_key <- health_list$key
-health_key <- tibble(
-  short = c('t', 'n', '1', '2', 'w', '3', '4'),
-  col = c('Turquoise 4', 'Chocolate 4', 'Chocolate 4', 'Chocolate 4', 'Bisque', 'Bisque', 'Bisque')
-)
+health_list <- read_pattern("teal-health")
 
+#--- adjust the key ---
 
+health_key <- health_list$key |>
+  mutate(
+    colour = case_match(
+      colour,
+      "turquoise" ~ "Turquoise 4",
+      "navy" ~ "Chocolate 4",
+      "white" ~ "Bisque"
+    )
+  )
+
+#--- check the pattern ---
 
 check_pattern(health_pattern, health_key)
 
-health_pattern |> 
-  #stack_mirror(even = FALSE, dir = x) |> 
-  #stack_mirror(even = TRUE, dir = y) |> 
-  tukutuku(
-    health_key, 
-    save = TRUE, 
-    save_width = 10,
-    border = TRUE, 
-    border_col = 'Chocolate 4',
-    bg_col <- 'Navy Blue'
-    #bg_col <- 'Midnight Blue'
-  )
+#--- create the tukutuku panel ---
+
+health_list$pattern |>
+  # stack_mirror(even = FALSE, dir = x) |>
+  # stack_mirror(even = TRUE, dir = y) |>
+  # left_join(health_list$key, by = "short") |>
+  left_join(health_key, by = "short") |>
+  create_tukutuku(line_width = 1)
+
+#-------------------------------------------------------------------------------

@@ -1,7 +1,7 @@
 key
-t turquoise
-w white
-b black
+t X turquoise
+w X white
+b X black
 
 pattern
 1 bbbttbwtwtbttbbbb

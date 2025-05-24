@@ -1,7 +1,7 @@
 key
-w turquoise
-r red
-b black
+w X turquoise
+r X red
+b X black
 
 pattern
  1 wbrwww

@@ -1,11 +1,11 @@
 key
-t turquoise
-n navy
-1 navy half /
-2 navy half other
-w white
-3 white half /
-4 white half other
+t X turquoise
+n X navy
+1 / navy
+2 < navy
+w X white
+3 / white
+4 < white
 
 pattern
 0  000000000111111111222

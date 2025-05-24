@@ -17,13 +17,15 @@ library(cli)
 
 pal <- tibble(
   short = c("r", "b", "w"),
-  col = c("red", "black", "white")
+  colour = c("red", "black", "white")
 )
 
 # read pattern file -------------------------------------------------------
 
 read_pattern <- function(name) {
-  patt_raw <- tibble(lines = readLines(glue("patterns/{name}.txt"))) |>
+  patt_raw <- tibble(
+    lines = readLines(glue("patterns/{name}.txt"), warn = FALSE)
+  ) |>
     mutate(
       section = case_when(lines %in% c("pattern", "key") ~ lines)
     ) |>
@@ -34,7 +36,7 @@ read_pattern <- function(name) {
   key <- patt_raw |>
     filter(section == "key") |>
     select(-section) |>
-    separate(lines, into = c("short", "col"), sep = " +")
+    separate(lines, into = c("short", "type", "colour"), sep = " +")
 
   pattern <- patt_raw |>
     filter(section == "pattern") |>
@@ -70,7 +72,7 @@ check_pattern <- function(pattern, key) {
   pattern |>
     left_join(key, by = "short") |>
     mutate(marker = "X") |>
-    ggplot(aes(x, y, colour = col, label = marker)) +
+    ggplot(aes(x, y, colour = colour, label = marker)) +
     geom_tile(fill = "white", colour = "black") +
     geom_text() +
     scale_colour_identity() +
@@ -93,6 +95,7 @@ init_pattern <- function(w = 10, h = 10, seed = 9919) {
     y = list(1:h),
     height = 1,
     width = 1,
+    type = "X",
     seed = seed,
     steps = "b"
   ) |>

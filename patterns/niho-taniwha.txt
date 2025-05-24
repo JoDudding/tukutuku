@@ -1,0 +1,14 @@
+key
+w # white
+r # red 
+b # black
+
+pattern
+1 rrrrrw
+2 rrrrwr
+3 rrrwrr
+4 rrwwww
+5 rwrrww
+6 wrrrrw
+7 wwwwww
+ 

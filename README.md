@@ -17,3 +17,7 @@ same steps here are three random tukutuku.
 ![](outputs/tukutuku_seed-656_steps-b-m10x-m10y_width-18_height-12.png)
 ![](outputs/tukutuku_seed-657_steps-b-m10x-m10y_width-18_height-12.png)
 ![](outputs/tukutuku_seed-658_steps-b-m10x-m10y_width-18_height-12.png)
+
+This was inspired by a picture I found.
+
+![](outputs/tukutuku_seed-0_steps-teal-health_width-42_height-21.png)

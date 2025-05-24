@@ -12,6 +12,7 @@ library(patchwork)
 
 source("scripts/tukutuku-functions.r")
 
+# using random pattern generator ------------------------------------------
 
 #--- random default ---
 
@@ -22,8 +23,7 @@ init_pattern() |>
       'r' ~ '#a01e1e',
       'b' ~ 'grey5',
       'w' ~ 'grey95'
-    ),
-    type = "X"
+    )
   ) |>
   create_tukutuku()
 
@@ -38,8 +38,7 @@ init_pattern(7, 7) |>
       'r' ~ '#a01e1e',
       'b' ~ 'grey5',
       'w' ~ 'grey95'
-    ),
-    type = "X"
+    )
   ) |>
   create_tukutuku()
 
@@ -54,8 +53,7 @@ p1 <- init_pattern(6, 9, seed = 656) |>
       'r' ~ '#a01e1e',
       'b' ~ 'grey5',
       'w' ~ 'grey95'
-    ),
-    type = "X"
+    )
   ) |>
   create_tukutuku()
 
@@ -68,8 +66,7 @@ p2 <- init_pattern(6, 9, seed = 657) |>
       'r' ~ '#a01e1e',
       'b' ~ 'grey5',
       'w' ~ 'grey95'
-    ),
-    type = "X"
+    )
   ) |>
   create_tukutuku()
 
@@ -82,12 +79,14 @@ p3 <- init_pattern(6, 9, seed = 658) |>
       'r' ~ '#a01e1e',
       'b' ~ 'grey5',
       'w' ~ 'grey95'
-    ),
-    type = "X"
+    )
   ) |>
   create_tukutuku()
 
 p1 + p2 + p3
+
+
+# using patterns ----------------------------------------------------------
 
 #--- taku ara ---
 
@@ -97,10 +96,6 @@ taku_ara_list$pattern |>
   stack_mirror(even = FALSE, dir = x) |>
   #stack_mirror(even = TRUE, dir = y) |> # not working
   left_join(taku_ara_list$key, by = "short") |>
-  mutate(
-    colour = col,
-    type = "X"
-  ) |>
   create_tukutuku()
 
 #--- pātikitiki ---
@@ -112,10 +107,6 @@ patikitiki_list$pattern |>
   stack_mirror(even = TRUE, dir = y) |>
   stack_col(dir = x) |> # y version not working
   left_join(patikitiki_list$key, by = "short") |>
-  mutate(
-    colour = col,
-    type = "X"
-  ) |>
   create_tukutuku(padding = 0.2, line_width = 2.5)
 
 #--- poutama ---
@@ -127,10 +118,16 @@ poutama_list$pattern |>
   #stack_mirror(even = TRUE, dir = y) |>
   #stack_col(dir = y) |> # y version not working
   left_join(poutama_list$key, by = "short") |>
-  mutate(
-    colour = col,
-    type = "X"
-  ) |>
+  create_tukutuku(line_width = 1)
+
+#--- niho taniwha ---
+
+niho_taniwha <- read_pattern('niho-taniwha')
+
+niho_taniwha$pattern |>
+  stack_mirror(even = TRUE, dir = x) |>
+  #stack_col(dir = y) |> # y version not working
+  left_join(niho_taniwha$key, by = "short") |>
   create_tukutuku(line_width = 1)
 
 #-------------------------------------------------------------------------------
